@@ -24,7 +24,7 @@ const TaskCard = ({ title, desc, status, onClick }) => {
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: '#fff', // Corrigi de "background" para "backgroundColor"
+        backgroundColor: '#fff',  
         padding: 15,
         borderRadius: 10,
         shadowColor: '#000',
@@ -33,12 +33,14 @@ const styles = StyleSheet.create({
         elevation: 3,
         marginVertical: 10
     },
+    
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center', // Corrigi "alignItens" para "alignItems"
+        alignItems: 'center',
         marginBottom: 10
     },
+
     title: {
         fontSize: 14,
         fontWeight: 'bold',
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase'
     },
     description: {
-        fontSize: 16, 
+        fontSize: 14,  
         color: '#666',
         marginBottom: 10
     },
