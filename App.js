@@ -1,7 +1,9 @@
+
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import TaskCard from './TaskCard';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
+import { getRequest } from './api/Api';
 
 export default function App() {
 
@@ -48,7 +50,16 @@ export default function App() {
     updateTasks.splice(index, 1);  
     setTask(updateTasks);
   };
-
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+       const resp = await getRequest();
+       setTask(resp)
+    }catch (ex) {
+      console.error(ex)
+    }
+  }
+}, [])
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Titulo da tarefa</Text>
@@ -147,4 +158,3 @@ const styles = StyleSheet.create({
     fontStyle: "italic"
   }
 });
-
